@@ -1,17 +1,13 @@
-from pathlib import Path
-
-readme = r'''<div align="center">
+<div align="center">
 
 # Hi, I'm Matteo 👋
 
-### Computer Science @ UFMS • Backend Development • C# / .NET
+### Computer Science @ UFMS · Backend Development · C# / .NET
 
-Building backend systems, integrations, automation and applied AI — while turning academic ideas into real projects.
+I build software around **backend systems, integrations, automation and applied AI** — usually where code needs to solve something concrete.
 
 [![GitHub](https://img.shields.io/badge/GitHub-TeoZ08-181717?style=for-the-badge&logo=github)](https://github.com/TeoZ08)
-[![Profile views](https://komarev.com/ghpvc/?username=TeoZ08&style=for-the-badge&label=PROFILE+VIEWS)](https://github.com/TeoZ08)
-<!-- Replace the URL below with your LinkedIn profile -->
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Matteo%20Lima%20Scotti-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
+![Profile views](https://komarev.com/ghpvc/?username=TeoZ08&style=for-the-badge&label=PROFILE+VIEWS)
 
 </div>
 
@@ -24,21 +20,22 @@ name      Matteo Lima Scotti
 location  Campo Grande, MS — Brazil
 degree    Computer Science @ UFMS
 role      Backend Development Intern
-focus     C# • .NET • APIs • integrations • software engineering
+focus     C# · .NET · REST APIs · integrations · software engineering
 ```
 
-I like projects that connect **software engineering with something tangible**: backend services, device/system integrations, automation, AI-assisted workflows and interactive experiences.
+My current professional focus is **backend development with C# and .NET**. Outside work, I use personal and academic projects to explore web engineering, infrastructure, AI and software that interacts with real-world workflows.
 
-Right now, most of my attention is on **C#/.NET backend development**, while I keep experimenting with web, infrastructure and applied AI.
+I care about understanding **why a system works**, not just making it work once.
 
 ---
 
-## ⚙️ Core stack
+## ⚙️ Main toolbox
 
 <div align="center">
 
 ![C#](https://img.shields.io/badge/C%23-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![REST API](https://img.shields.io/badge/REST-APIs-005571?style=for-the-badge)
 ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
@@ -46,55 +43,59 @@ Right now, most of my attention is on **C#/.NET backend development**, while I k
 
 </div>
 
-### Also building with
-
-<div align="center">
+<details>
+<summary><b>More technologies I use</b></summary>
+<br>
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 
-</div>
+</details>
 
 ---
 
 ## 🧭 What I'm working on
 
-- **Backend engineering** with C# and the .NET ecosystem.
-- **REST APIs, business rules and persistence** in real systems.
-- **System/device integrations** and data flows between software and external equipment.
-- **Automation and AI workflows** for practical tasks.
-- **Computer Science at UFMS**, connecting theory with projects whenever possible.
+```text
+backend       C# / .NET · REST APIs · business rules · persistence
+integrations  software ↔ services ↔ devices · local/network data flows
+ai            RAG · LLM integrations · tool calling · automation
+infra         Linux · Docker · deployment · Kubernetes concepts
+university    software engineering · networks · distributed systems
+```
 
 ---
 
-## 🚀 Selected projects
+## 🚀 Selected work
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🤖 JARVIS Acadêmico
-Academic assistant built around **RAG, LLMs and tool calling**, combining retrieval with a web interface.
+### 🧠 JARVIS Acadêmico
+Academic copilot combining **RAG, remote LLMs, tool calling, document upload and active review**.
 
-`React` `FastAPI` `Python` `RAG` `LLMs` `Docker`
+`Python` `FastAPI` `React` `RAG` `Docker`
 
-[View repository →](https://github.com/TeoZ08/jarvis-academico)
+[Repository →](https://github.com/TeoZ08/jarvis-academico) · [Live system →](https://teoz08-jarvis-academico.hf.space)
 
 </td>
 <td width="50%" valign="top">
 
-### 👵 UNAPI
-Technology and digital inclusion work connected to UFMS extension activities, including interactive materials and practical workshops.
+### 💧 AquaIA UFMS
+Responsive web app for reporting water waste on campus, with **AI-assisted analysis, prioritization, dashboards and maps**.
 
-`Web` `Accessibility` `Digital Inclusion` `Education`
+`Flask` `SQLite` `Gemini` `Tailwind` `Leaflet`
 
-[Explore my repositories →](https://github.com/TeoZ08?tab=repositories)
+[Repository →](https://github.com/TeoZ08/aquaia-ufms)
 
 </td>
 </tr>
@@ -102,22 +103,22 @@ Technology and digital inclusion work connected to UFMS extension activities, in
 <tr>
 <td width="50%" valign="top">
 
-### 💧 AquaIA
-Academic project combining software and applied AI, created in the UFMS environment.
+### 👵 Portal UnAPI
+Digital inclusion portal used to support UFMS workshops, with interactive learning experiences for **gov.br, digital security, mobility, keyboard and mouse**.
 
-`Python` `Flask` `Gemini` `SQLite` `Leaflet`
+`HTML` `CSS` `JavaScript` `Leaflet` `Accessibility`
 
-[View repository →](https://github.com/TeoZ08/aquaia_ufms)
+[Repository →](https://github.com/TeoZ08/homeUnapi)
 
 </td>
 <td width="50%" valign="top">
 
-### 🛍️ useART
-E-commerce project exploring a complete product flow, authentication, database and deployment.
+### 🧩 teo-painel
+A **local-first personal project dashboard** for tracking progress, decisions, blockers and next actions while publishing only sanitized public datasets.
 
-`Next.js` `TypeScript` `Supabase` `PostgreSQL`
+`TypeScript` `Local-first` `GitHub Pages` `Data pipelines`
 
-[View repository →](https://github.com/TeoZ08/useART)
+[Repository →](https://github.com/TeoZ08/teo-painel)
 
 </td>
 </tr>
@@ -125,58 +126,29 @@ E-commerce project exploring a complete product flow, authentication, database a
 
 ---
 
-## 🧪 Current lab
+## 🔬 Things I like building
 
-Things I'm actively studying, testing or applying:
-
-```text
-Backend        C# • .NET • EF Core • APIs • repositories • business rules
-Data           SQL • PostgreSQL • MongoDB
-Infrastructure Docker • Linux • Kubernetes concepts
-AI             RAG • LLM integrations • agents • automation
-Web            Next.js • React • TypeScript
-Networks       TCP/IP • P2P • device communication • local integrations
-```
+- backend services with explicit business rules;
+- integrations between software, APIs and external systems;
+- tools that automate repetitive workflows;
+- applied AI with visible evidence and practical utility;
+- interfaces that make technically complex systems easier to use;
+- projects where I can learn the architecture instead of only the framework.
 
 ---
 
-## 📊 GitHub snapshot
+## 🎓 UFMS + real-world practice
 
-<div align="center">
+I study **Computer Science at UFMS** and try to turn coursework into working software whenever it makes sense. At the same time, my internship gives me contact with backend development in production-oriented systems — especially APIs, integrations, data persistence, maintenance and debugging.
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=TeoZ08&show_icons=true&hide_border=true&rank_icon=github&theme=github_dark" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TeoZ08&layout=compact&hide_border=true&theme=github_dark" />
-
-</div>
-
-> Stats are fun. Shipping useful things matters more.
-
----
-
-## 🎯 2026
-
-```mermaid
-flowchart LR
-    A[Computer Science] --> B[Backend]
-    B --> C[C# / .NET]
-    C --> D[Real systems]
-    D --> E[Integrations]
-    E --> F[Automation + AI]
-```
-
-My current goal is simple: **get progressively better at building reliable software, understanding the systems behind it, and documenting what I learn along the way.**
+That combination is the part I value most: **theory giving me better questions, and practice forcing better answers.**
 
 ---
 
 <div align="center">
 
-### `build → test → understand → improve`
+### `build → test → understand → document → improve`
 
-<sub>Matteo Lima Scotti • Campo Grande, MS 🇧🇷</sub>
+<sub>Matteo Lima Scotti · Campo Grande, MS 🇧🇷</sub>
 
 </div>
-'''
-
-path = Path("/mnt/data/README.md")
-path.write_text(readme, encoding="utf-8")
-print(path)
