@@ -113,12 +113,12 @@ Digital inclusion portal used to support UFMS workshops, with interactive learni
 </td>
 <td width="50%" valign="top">
 
-### 🧩 teo-painel
-A **local-first personal project dashboard** for tracking progress, decisions, blockers and next actions while publishing only sanitized public datasets.
+### 🌿 3D Portfolio
+Full-screen **interactive 3D portfolio** where the visitor explores an outdoor scene, finds a terminal and enters a project hub guided by a controllable robot.
 
-`TypeScript` `Local-first` `GitHub Pages` `Data pipelines`
+`JavaScript` `Three.js` `WebGL` `3D Interaction`
 
-[Repository →](https://github.com/TeoZ08/teo-painel)
+[Repository →](https://github.com/TeoZ08/MeuSitePortfolio)
 
 </td>
 </tr>
