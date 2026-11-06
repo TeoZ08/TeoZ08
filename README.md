@@ -1,22 +1,6 @@
 <p align="center">
-  <img src="./assets/banner-paisagem-animado.webp" alt="Paisagem animada com árvore solitária, nuvens e reflexo na água" width="100%" />
+  <img src="./assets/hero-perfil-animado.webp" alt="Animated cinematic landscape transitioning seamlessly from cloud reflections on a lake to Matteo Lima Scotti — Computer Science at UFMS; backend development, C# / .NET and applied AI. Building reliable software for systems, integrations and real-world workflows." width="100%" />
 </p>
-
-<div align="center">
-
-# Matteo Lima Scotti
-
-<sub>COMPUTER SCIENCE · UFMS</sub>
-
-### Backend development · C# / .NET · applied AI
-
-I build reliable software for **systems, integrations and real-world workflows**.
-
-![Backend](https://img.shields.io/badge/Backend-C%23%20%2F%20.NET-B59A52?style=flat-square&labelColor=161B22&logo=dotnet&logoColor=E6EDF3)
-![Integrations](https://img.shields.io/badge/Focus-Systems%20%26%20APIs-3D444D?style=flat-square&labelColor=161B22)
-![Applied AI](https://img.shields.io/badge/Exploring-Applied%20AI-3D444D?style=flat-square&labelColor=161B22)
-
-</div>
 
 ---
 
