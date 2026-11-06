@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner-paisagem-animado.webp" alt="Paisagem animada com árvore solitária, nuvens e reflexo na água" width="100%" />
+</p>
+
 <div align="center">
 
 # Hi, I'm Matteo 👋
