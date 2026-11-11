@@ -32,4 +32,4 @@ Ink `#080B10`, ivory `#EFF0EB`, muted gray `#A3ADB0`, restrained gold `#B59B61`.
 
 ## Dedicated playback
 
-The public showcase is served by GitHub Pages from `/docs` at https://teoz08.github.io/. It contains a native HTML5 video player and a responsive, accessible project gallery. The render script synchronizes the generated media into `docs/media/`.
+The public showcase is served by GitHub Pages from `/docs` at https://teoz08.github.io/TeoZ08/. It contains a native HTML5 video player and a responsive, accessible project gallery. The render script synchronizes the generated media into `docs/media/`.
