@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/profile-*.webp assets/profile-film.mp4 assets/project-*.webp docs/media/
+          git add assets/hero-perfil-mobile*.webp assets/profile-*.webp assets/profile-film.mp4 assets/project-*.webp docs/media/
           if ! git diff --cached --quiet; then
             git commit -m "assets: regenerate profile motion from Remotion source"
             git push origin HEAD:main

@@ -33,3 +33,7 @@ Ink `#080B10`, ivory `#EFF0EB`, muted gray `#A3ADB0`, restrained gold `#B59B61`.
 ## Dedicated playback
 
 The public showcase is served by GitHub Pages from `/docs` at https://teoz08.github.io/TeoZ08/. It contains a native HTML5 video player and a responsive, accessible project gallery. The render script synchronizes the generated media into `docs/media/`.
+
+## Quality and continuity checks
+
+README media panels render at 1200 × 350 pixels for desktop. Mobile variants are independently composed at 480 × 520 pixels. Animated WebP assets use 12 frames per second with high-quality image encoding. The MP4 is generated once at H.264 CRF 13, then stream-copied into a faststart container; it is not destructively re-encoded. Run `node motion/scripts/validate.mjs` and review `motion/preview/` before publishing. The continuous artwork is authored inside a single HTML container with no interleaved Markdown blocks; hyperlinks wrap the project images individually.

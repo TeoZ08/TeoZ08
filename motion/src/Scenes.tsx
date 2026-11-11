@@ -161,3 +161,85 @@ export const DepthMobile:React.FC=()=>{
   </div>)}
  </AbsoluteFill>;
 };
+
+
+/**
+ * A continuous panorama panel for the README, all four panels share the
+ * same color at their edges, so Markdown's few baseline pixels disappear.
+ * Actual application screenshots stay readable: no simulated interfaces.
+ */
+export const ProjectPanel:React.FC<{projectKey:ProjectKey}>=({projectKey})=>{
+ const frame=useCurrentFrame();
+ const p=projects.find(item=>item.key===projectKey) ?? projects[0];
+ const index=projects.findIndex(item=>item.key===projectKey);
+ const fade=(1-Math.cos(2*Math.PI*frame/48))/2;
+ const y=1.02+.009*Math.sin(2*Math.PI*frame/48);
+ return <AbsoluteFill style={{background:'#080b10',overflow:'hidden'}}>
+  <AbsoluteFill style={{background:'radial-gradient(ellipse at 72% 50%,#1b2831 0%,#0d151d 50%,#080b10 94%)'}}/>
+  <div style={{position:'absolute',left:0,right:0,top:0,height:1,background:'linear-gradient(90deg,transparent,rgba(184,155,94,.22),transparent)'}}/>
+  {Array.from({length:5},(_,i)=><div key={i} style={{
+   position:'absolute',top:35+67*i,left:160+(i%2)*30,width:'65%',height:1,
+   opacity:.06,background:'linear-gradient(90deg,transparent,#acb6b7,transparent)',
+   transform:'translateX('+(4*Math.sin(2*Math.PI*frame/48+i))+'px)'
+  }}/>)}
+  <div style={{position:'absolute',left:51,top:64,width:480}}>
+   <div style={{...sans,color:gold,letterSpacing:3.1,fontSize:16,fontWeight:600}}>{p.kicker}</div>
+   <div style={{...serif,color:ivory,fontSize:55,lineHeight:1.02,marginTop:16,letterSpacing:-.8}}>{p.title}</div>
+   <div style={{...sans,color:'#bdc6c7',fontSize:20,lineHeight:1.25,marginTop:13,maxWidth:430}}>{p.description}</div>
+  </div>
+  <div style={{position:'absolute',left:51,bottom:48,fontSize:18,color:gold,letterSpacing:.7,...sans}}>{p.tech}</div>
+  <div style={{position:'absolute',right:46,top:22,width:578,height:326,background:'#0c131a',
+    overflow:'hidden',border:'1px solid rgba(211,211,202,.20)',boxShadow:'0 11px 31px rgba(0,0,0,.44)'}}>
+   <Img src={staticFile('screens/'+p.first)} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',
+      opacity:1-fade,transform:'scale('+y+')'}}/>
+   <Img src={staticFile('screens/'+p.second)} style={{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',
+      opacity:fade,transform:'scale('+y+')'}}/>
+  </div>
+  <div style={{position:'absolute',bottom:0,left:0,right:0,height:18,background:'linear-gradient(0deg,#080b10,transparent)'}}/>
+  <div style={{position:'absolute',left:54,bottom:16,color:'#566169',fontSize:12,letterSpacing:3,...sans}}>
+    {String(index+1).padStart(2,'0')} / 04
+  </div>
+ </AbsoluteFill>;
+};
+
+
+/** Portrait compositions keep all project copy legible on 320px-wide phones. */
+export const ProjectPanelMobile:React.FC<{projectKey:ProjectKey}>=({projectKey})=>{
+ const frame=useCurrentFrame();
+ const p=projects.find(item=>item.key===projectKey) ?? projects[0];
+ const index=projects.findIndex(item=>item.key===projectKey);
+ const fade=(1-Math.cos(2*Math.PI*frame/48))/2;
+ return <AbsoluteFill style={{background:'#080b10'}}>
+  <AbsoluteFill style={{background:'linear-gradient(180deg,#101b22,#0a0e13 62%,#080b10)'}}/>
+  <div style={{position:'absolute',top:22,left:28,right:28,height:238,border:'1px solid rgba(184,155,94,.26)',overflow:'hidden'}}>
+   <Img src={staticFile('screens/'+p.first)} style={{position:'absolute',width:'100%',height:'100%',objectFit:'cover',opacity:1-fade}}/>
+   <Img src={staticFile('screens/'+p.second)} style={{position:'absolute',width:'100%',height:'100%',objectFit:'cover',opacity:fade}}/>
+  </div>
+  <div style={{position:'absolute',top:293,left:30,right:30}}>
+    <div style={{...sans,color:gold,fontSize:18,letterSpacing:2.1,fontWeight:600}}>{p.kicker}</div>
+    <div style={{...serif,color:ivory,fontSize:46,lineHeight:1.02,marginTop:17}}>{p.title}</div>
+    <div style={{...sans,color:'#bec6c8',fontSize:20,lineHeight:1.29,marginTop:15}}>{p.description}</div>
+  </div>
+  <div style={{position:'absolute',bottom:17,left:30,right:25,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+   <div style={{...sans,color:gold,fontSize:17}}>{p.tech}</div>
+   <div style={{...sans,color:'#738088',fontSize:15}}>{String(index+1).padStart(2,'0')} / 04</div>
+  </div>
+  <div style={{position:'absolute',bottom:0,left:0,right:0,height:1,background:'#080b10'}}/>
+ </AbsoluteFill>;
+};
+
+export const HeroMobile:React.FC=()=>{
+ const frame=useCurrentFrame();
+ const shift=1.10 + .013*Math.sin(2*Math.PI*frame/48);
+ return <AbsoluteFill style={{background:'#080b10',overflow:'hidden'}}>
+  <div style={{position:'absolute',top:0,left:0,right:0,height:400,overflow:'hidden'}}>
+   <Img src={scene} style={{width:'100%',height:'100%',objectFit:'cover',transform:'scale('+shift+')',transformOrigin:'center center'}}/>
+   <AbsoluteFill style={{background:'linear-gradient(180deg,transparent 0%,rgba(7,10,13,.06) 60%,#080b10 99%)'}}/>
+  </div>
+  <div style={{position:'absolute',top:420,left:27,right:27,textAlign:'center'}}>
+   <div style={{...serif,fontSize:56,lineHeight:.98,color:ivory}}>Matteo<br/>Lima Scotti</div>
+   <div style={{...sans,fontSize:19,color:gold,letterSpacing:2,marginTop:25}}>COMPUTER SCIENCE · UFMS</div>
+   <div style={{...sans,fontSize:22,color:'#c4cacc',marginTop:28}}>Backend · C# / .NET · Applied AI</div>
+  </div>
+ </AbsoluteFill>;
+};

@@ -6,7 +6,7 @@ import {spawnSync} from 'node:child_process';
 const repo=resolve(fileURLToPath(new URL('../..',import.meta.url)));
 const readme=readFileSync(join(repo,'README.md'),'utf-8');
 const dir=join(repo,'assets');
-const expected=['hero-perfil-animado.webp','profile-depth.webp','profile-depth-mobile.webp','project-jarvis-animated.webp','project-aquaia-animated.webp','project-unapi.webp','project-portfolio.webp','profile-film-cover.webp','profile-film.mp4'];
+const expected=['hero-perfil-animado.webp','hero-perfil-mobile.webp','hero-perfil-mobile-static.webp','profile-depth.webp','profile-depth-static.webp','profile-depth-mobile-static.webp','profile-depth-mobile.webp','project-jarvis-animated.webp','project-aquaia-animated.webp','project-unapi-panel.webp','project-portfolio-panel.webp','project-jarvis-mobile.webp','project-aquaia-mobile.webp','project-unapi-mobile.webp','project-portfolio-mobile.webp','profile-film-cover.webp','profile-film.mp4'];
 const warnings=[];
 for(const file of expected){
  const path=join(dir,file);
@@ -22,6 +22,10 @@ if(mediaSize>9*1024*1024)warnings.push('README visual media exceeds 9MB: '+(medi
 const probe=spawnSync('ffprobe',['-v','error','-show_entries','format=duration','-of','default=noprint_wrappers=1:nokey=1',join(dir,'profile-film.mp4')],{encoding:'utf-8'});
 if(probe.status!==0)throw Error('Video could not be decoded');
 const duration=Number(probe.stdout.trim());
+const bitrateProbe=spawnSync('ffprobe',['-v','error','-select_streams','v:0','-show_entries','stream=bit_rate','-of','default=noprint_wrappers=1:nokey=1',join(dir,'profile-film.mp4')],{encoding:'utf-8'});
+const videoRate=Number(bitrateProbe.stdout.trim());
+if(!Number.isFinite(videoRate) || videoRate<1000000)throw Error('Video bitrate too low for project screenshots: '+videoRate);
+
 if(duration<29 || duration>33)throw Error('Unexpected film duration: '+duration);
 if(!existsSync(join(repo,'docs/index.html')))throw Error('Missing showcase player page');
 const player=readFileSync(join(repo,'docs/index.html'),'utf-8');

@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@remotion/cli": "4.0.494",
-    "remotion": "4.0.494",
     "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "react-dom": "19.1.1",
+    "remotion": "4.0.494"
   },
   "devDependencies": {
     "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
+    "playwright-core": "^1.56.1",
     "typescript": "5.9.3"
   }
 }
