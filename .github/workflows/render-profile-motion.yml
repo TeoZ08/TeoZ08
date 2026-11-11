@@ -1,0 +1,36 @@
+name: Rebuild profile motion assets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: motion/package-lock.json
+      - name: Confirm video tools
+        run: ffmpeg -version | head -1
+      - name: Install reproducible dependencies
+        run: npm ci --prefix motion
+      - name: Render film and animated cards
+        run: npm run render --prefix motion
+      - name: Verify published output
+        run: node motion/scripts/validate.mjs
+      - name: Commit generated media if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/profile-*.webp assets/profile-film.mp4 assets/project-*.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: regenerate profile motion from Remotion source"
+            git push origin HEAD:main
+          fi

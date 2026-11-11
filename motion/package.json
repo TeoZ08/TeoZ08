@@ -1,0 +1,22 @@
+{
+  "name": "teoz08-profile-motion",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "node scripts/render.mjs",
+    "check": "tsc --noEmit && node scripts/validate.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.494",
+    "remotion": "4.0.494",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "typescript": "5.9.3"
+  }
+}
