@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b10">
+<meta name="description" content="Matteo Lima Scotti — backend development, integrations and applied AI. A cinematic presentation of four real software projects.">
+<meta property="og:title" content="Matteo Lima Scotti · Beyond the code">
+<meta property="og:image" content="https://teoz08.github.io/media/profile-film-cover.webp">
+<title>Matteo Lima Scotti | Beyond the code</title>
+<style>
+:root{color-scheme:dark;--bg:#080b10;--ink:#eff0eb;--gold:#b59b61;--muted:#aeb8b9;--line:rgba(181,155,97,.22)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}a:focus-visible,video:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.progress{position:fixed;z-index:20;top:0;left:0;height:2px;background:var(--gold);width:0;pointer-events:none}
+nav{position:absolute;z-index:5;top:0;left:0;width:100%;padding:26px max(24px,calc((100vw - 1150px)/2));display:flex;justify-content:space-between;align-items:center;letter-spacing:.12em;font-size:12px}
+nav .brand{font-weight:700;letter-spacing:.22em}nav .links{display:flex;gap:30px}nav a:hover,.meta a:hover{color:var(--gold)}
+.hero{position:relative;isolation:isolate;min-height:680px;min-height:90svh;display:flex;align-items:end;background:#080b10}
+.hero::before{content:"";z-index:-2;position:absolute;inset:0;background:url("media/scene.webp") center center/cover no-repeat}
+.hero::after{content:"";z-index:-1;position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,9,.5),rgba(4,6,9,.15) 40%,rgba(4,6,9,.8) 80%,#080b10)}
+.wrap{max-width:1150px;margin:0 auto;padding-left:30px;padding-right:30px;width:100%}
+.hero .wrap{padding-bottom:110px;padding-top:150px}
+.eyebrow{font-size:12px;letter-spacing:.23em;color:var(--gold);text-transform:uppercase;font-weight:600}
+h1,h2,h3{font-family:Georgia,Times,serif;font-weight:400;margin:0}h1{font-size:clamp(3.9rem,9vw,8rem);line-height:.97;letter-spacing:-.045em;margin:22px 0 28px}
+.hero p{max-width:610px;font-size:clamp(1.05rem,2vw,1.25rem);color:#c3caca;margin:0}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.button{border:1px solid var(--gold);background:rgba(7,11,13,.5);padding:12px 24px;min-height:46px;font-size:14px;display:inline-flex;align-items:center;gap:12px;transition:background .25s,transform .25s}
+.button:hover{background:rgba(181,155,97,.17);transform:translateY(-2px)}.button.secondary{border-color:rgba(218,222,223,.33)}
+.content{padding-top:90px;padding-bottom:62px;scroll-margin-top:20px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:32px}
+.section-head h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.08;margin-top:12px}
+.section-head p{color:var(--muted);max-width:380px;font-size:14px;margin:0}
+.film{padding:8px;border:1px solid var(--line);background:#030507;box-shadow:0 25px 70px #0004}
+video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#030507}
+.meta{margin-top:16px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;font-size:12px;color:#919a9d}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.project{border:1px solid var(--line);background:#0e151b;display:block;overflow:hidden;position:relative;transition:transform .25s,border-color .25s}
+.project:hover{transform:translateY(-4px);border-color:var(--gold)}
+.project img{display:block;width:100%;aspect-ratio:12/7;object-fit:cover}
+.project .info{padding:19px 20px 20px}.project h3{font-size:27px;margin:5px 0 5px}.project p{margin:0;font-size:13px;color:var(--muted)}
+.project .num{letter-spacing:.17em;color:var(--gold);font-size:11px}.project .arrow{position:absolute;right:20px;bottom:15px;color:var(--gold);font-size:22px}
+.end{text-align:center;margin-top:45px;padding:90px 0 110px;border-top:1px solid var(--line)}
+.end h2{font-size:clamp(2.7rem,6vw,5rem);margin:14px 0 18px}.end p{color:var(--muted);margin:0 auto 26px;max-width:510px}
+footer{padding:25px 0 35px;border-top:1px solid #ffffff14;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;color:#7e888d;font-size:12px}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.js .reveal.visible{opacity:1;transform:none}
+@media(max-width:700px){
+nav{padding:22px}.wrap{padding-left:20px;padding-right:20px}
+.hero{min-height:670px;min-height:85svh}.hero .wrap{padding-bottom:72px}
+.hero::before{background-size:auto 100%}
+.content{padding-top:66px;padding-bottom:40px}.grid{grid-template-columns:1fr;gap:16px}.film{padding:4px}
+.section-head{gap:15px}.project h3{font-size:23px}.end{margin-top:40px;padding:70px 0 90px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav aria-label="Main navigation"><a href="#top" class="brand">TEOZ08</a><div class="links"><a href="#film">Film</a><a href="#projects">Projects</a><a href="https://github.com/TeoZ08">GitHub ↗</a></div></nav>
+<header class="hero" id="top"><div class="wrap">
+<div class="eyebrow">Computer Science · UFMS</div>
+<h1>Beyond<br>the code.</h1>
+<p>I'm Matteo Lima Scotti. I build backend systems, integrations and practical AI — and explore how software can become something you experience.</p>
+<div class="buttons"><a class="button" href="#film">Watch the film <span aria-hidden="true">▶</span></a><a class="button secondary" href="#projects">Explore the projects <span aria-hidden="true">↓</span></a></div>
+</div></header>
+<main class="wrap">
+<section class="content reveal" id="film" aria-labelledby="film-title">
+<div class="section-head"><div><div class="eyebrow">01 / The journey</div><h2 id="film-title">Made to be seen.</h2></div><p>Four real projects, a contemplative landscape and an original ambient soundtrack. Created with Remotion.</p></div>
+<div class="film"><video controls playsinline preload="metadata" poster="media/profile-film-cover.webp" aria-label="Beyond the code, 31-second film presenting four real software projects"><source src="media/profile-film.mp4" type="video/mp4">Your browser does not support HTML5 video. <a href="media/profile-film.mp4">Open the MP4.</a></video></div>
+<div class="meta"><span>31 seconds · 1280 × 720 · original ambient audio</span><span>Playback on request · sound optional</span></div>
+</section>
+<section class="content reveal" id="projects" aria-labelledby="projects-title">
+<div class="section-head"><div><div class="eyebrow">02 / Selected work</div><h2 id="projects-title">Real work. Real screens.</h2></div><p>The images are captures from actual projects. Select one to see the source repository.</p></div>
+<div class="grid">
+<a class="project" href="https://github.com/TeoZ08/jarvis-academico"><img loading="lazy" src="media/project-jarvis.webp" alt="Actual JARVIS academic copilot interface"><div class="info"><div class="num">01 / APPLIED AI</div><h3>JARVIS Acadêmico</h3><p>Document retrieval · RAG · tool calling</p></div><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="project" href="https://github.com/TeoZ08/aquaia-ufms"><img loading="lazy" src="media/project-aquaia.webp" alt="AquaIA water reporting project dashboard"><div class="info"><div class="num">02 / DATA & IMPACT</div><h3>AquaIA</h3><p>Water waste reporting · maps · analytics</p></div><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="project" href="https://github.com/TeoZ08/homeUnapi"><img loading="lazy" src="media/project-unapi.webp" alt="Portal UnAPI digital inclusion interface"><div class="info"><div class="num">03 / DIGITAL INCLUSION</div><h3>Portal UnAPI</h3><p>Accessibility · digital literacy · education</p></div><span class="arrow" aria-hidden="true">↗</span></a>
+<a class="project" href="https://github.com/TeoZ08/MeuSitePortfolio"><img loading="lazy" src="media/project-portfolio.webp" alt="Real interactive 3D portfolio and project archive"><div class="info"><div class="num">04 / INTERACTIVE WEB</div><h3>3D Portfolio</h3><p>Three.js · WebGL · interactive experience</p></div><span class="arrow" aria-hidden="true">↗</span></a>
+</div></section>
+<section class="end reveal"><div class="eyebrow">The work continues</div><h2>Build. Test. Understand.</h2><p>Theory brings better questions. Practice demands better answers.</p><a class="button" href="https://github.com/TeoZ08">View my GitHub ↗</a></section>
+<footer><span>Matteo Lima Scotti · Computer Science @ UFMS</span><span>Original visuals · authentic project screenshots · Remotion</span></footer>
+</main>
+<script>
+document.documentElement.classList.add('js');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches, els=document.querySelectorAll('.reveal');
+if(reduced||!('IntersectionObserver' in window)){els.forEach(el=>el.classList.add('visible'));}
+else{const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.1});els.forEach(el=>observer.observe(el));}
+const progress=document.getElementById('progress');
+let queued=false;
+function update(){const total=Math.max(1,document.documentElement.scrollHeight-innerHeight);progress.style.width=Math.max(0,Math.min(100,scrollY/total*100))+'%';queued=false;}
+addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}}, {passive:true});addEventListener('resize',update);update();
+</script>
+</body>
+</html>

@@ -23,6 +23,13 @@ const probe=spawnSync('ffprobe',['-v','error','-show_entries','format=duration',
 if(probe.status!==0)throw Error('Video could not be decoded');
 const duration=Number(probe.stdout.trim());
 if(duration<29 || duration>33)throw Error('Unexpected film duration: '+duration);
+if(!existsSync(join(repo,'docs/index.html')))throw Error('Missing showcase player page');
+const player=readFileSync(join(repo,'docs/index.html'),'utf-8');
+if(!player.includes('<video controls') || !player.includes('media/profile-film.mp4'))throw Error('Showcase video player invalid');
+for(const media of ['profile-film.mp4','profile-film-cover.webp','project-jarvis.webp','project-aquaia.webp','project-unapi.webp','project-portfolio.webp','scene.webp']){
+ const p=join(repo,'docs/media',media);
+ if(!existsSync(p))throw Error('Showcase media missing: '+media);
+}
 console.log('PASS: assets, README references, project links, playable video ('+duration.toFixed(2)+'s), integrity');
 console.log('README media '+(mediaSize/1048576).toFixed(2)+' MB; film '+(statSync(join(dir,'profile-film.mp4')).size/1048576).toFixed(2)+' MB');
 for(const x of warnings)console.log('WARN:',x);

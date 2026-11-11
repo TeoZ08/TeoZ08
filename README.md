@@ -53,9 +53,9 @@ Every image below opens the **real project repository**. The screenshots are tak
 
 A short film rendered with Remotion using real project screens, the original landscape and a custom ambient soundtrack. **31 seconds. Sound optional.**
 
-<a href="https://github.com/TeoZ08/TeoZ08/blob/main/assets/profile-film.mp4"><img src="./assets/profile-film-cover.webp" alt="Play Beyond the code: a 31-second cinematic video presenting Matteo's four software projects" width="100%"/></a>
+<a href="https://teoz08.github.io/#film"><img src="./assets/profile-film-cover.webp" alt="Play Beyond the code: a 31-second cinematic video presenting Matteo's four software projects" width="100%"/></a>
 
-<p align="center"><a href="https://github.com/TeoZ08/TeoZ08/blob/main/assets/profile-film.mp4">Watch the film</a> · <a href="https://github.com/TeoZ08/TeoZ08/tree/main/motion">Explore the Remotion source</a></p>
+<p align="center"><a href="https://teoz08.github.io/#film">Watch the film</a> · <a href="https://github.com/TeoZ08/TeoZ08/blob/main/assets/profile-film.mp4">MP4 file</a> · <a href="https://github.com/TeoZ08/TeoZ08/tree/main/motion">Explore the Remotion source</a></p>
 
 <details>
 <summary>Prefer a static, low-motion presentation?</summary>

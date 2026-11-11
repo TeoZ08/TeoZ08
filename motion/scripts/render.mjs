@@ -55,6 +55,13 @@ if(!quick){
  cmd('ffmpeg',['-loglevel','error','-y','-i',master,'-c:v','libx264','-crf','25','-preset','medium',
   '-pix_fmt','yuv420p','-movflags','+faststart','-c:a','aac','-b:a','96k',join(assets,'profile-film.mp4')]);
 }
+const pageAssets=join(repo,'docs/media');
+mkdirSync(pageAssets,{recursive:true});
+for(const name of ['profile-film.mp4','profile-film-cover.webp','project-jarvis.webp','project-aquaia.webp','project-unapi.webp','project-portfolio.webp']){
+ const source=join(assets,name);
+ if(existsSync(source))copyFileSync(source,join(pageAssets,name));
+}
+copyFileSync(join(dir,'public/landscape/scene.webp'),join(pageAssets,'scene.webp'));
 console.log('Render complete');
 for(const filename of ['profile-depth.webp','project-jarvis-animated.webp','project-aquaia-animated.webp','project-unapi.webp','project-portfolio.webp','profile-film-cover.webp','profile-film.mp4']){
  const p=join(assets,filename);if(existsSync(p))console.log(filename,(statSync(p).size/1024/1024).toFixed(2)+' MB');
