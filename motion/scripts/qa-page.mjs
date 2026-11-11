@@ -1,26 +1,35 @@
 import {chromium} from 'playwright-core';
 import {mkdirSync} from 'node:fs';
 import {resolve} from 'node:path';
-const folder=resolve('motion/preview/github-qa');
-mkdirSync(folder,{recursive:true});
+const dir=resolve('motion/preview/github-qa');
+mkdirSync(dir,{recursive:true});
 const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
-for(const [label,w,h] of [['desktop',1440,900],['mobile',390,844]]){
- const page=await browser.newPage({viewport:{width:w,height:h}, deviceScaleFactor:1, reducedMotion:'reduce'});
- const errors=[];
- page.on('console',msg=>{if(msg.type()==='error' && errors.length<8)errors.push(msg.text())});
+for(const [name,width,height,mode] of [
+  ['desktop',1440,900,'no-preference'],
+  ['mobile',390,844,'no-preference'],
+  ['reduced-motion',390,844,'reduce']
+]){
+ const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1,reducedMotion:mode});
  await page.goto('https://github.com/TeoZ08',{waitUntil:'domcontentloaded',timeout:45000});
  await page.locator('.markdown-body').first().waitFor({timeout:30000});
- await page.screenshot({path:folder+'/'+label+'-full.png',fullPage:true,animations:'disabled'});
- const layout=await page.locator('.markdown-body').first().evaluate(root=>{
-  const rootR=root.getBoundingClientRect();
-  const map=el=>{
-   const r=el.getBoundingClientRect();
-   const cs=getComputedStyle(el);
-   return {tag:el.tagName,src:(el.getAttribute('src')||'').slice(-75),text:(el.textContent||'').trim().slice(0,60),top:Math.round(r.top+scrollY),height:Math.round(r.height),width:Math.round(r.width),marginTop:cs.marginTop,marginBottom:cs.marginBottom,display:cs.display};
-  };
-  return {bodyHeight:Math.round(rootR.height),elements:Array.from(root.querySelectorAll('h1,h2,h3,p,div,details,img,picture,a')).slice(0,62).map(map)};
+ const metrics=await page.locator('.markdown-body').first().evaluate(async root=>{
+  const images=[...root.querySelectorAll('img')].filter(img=>img.getAttribute('src')?.includes('/assets/'));
+  await Promise.all(images.map(img=>img.decode().catch(()=>{})));
+  const list=images.slice(0,7).map((img,i)=>{
+   const box=img.getBoundingClientRect(), next=images[i+1]?.getBoundingClientRect();
+   return {
+    file:(img.currentSrc||img.src).split('/').pop()?.slice(0,95),
+    naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
+    renderedWidth:Math.round(box.width),renderedHeight:Math.round(box.height),
+    gapAfter:next?Math.round(next.top-box.bottom):null
+   };
+  });
+  return {images:list,totalHeight:Math.round(root.getBoundingClientRect().height)};
  });
- console.log(JSON.stringify({device:label,width:w,height:h,url:page.url(),layout,errors},null,2));
+ await page.screenshot({path:dir+'/'+name+'-review.png',fullPage:true,animations:'disabled'});
+ console.log(JSON.stringify({name,mode,metrics},null,2));
+ if(metrics.images.length!==7 || metrics.images.some(img=>img.naturalWidth===0)) throw Error(name+': failed to load seven visuals');
+ if(metrics.images.slice(0,6).some(img=>img.gapAfter>1)) throw Error(name+': visible gap between cinematic panels');
  await page.close();
 }
 await browser.close();
